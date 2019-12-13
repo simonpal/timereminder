@@ -7,17 +7,18 @@ npm install
 ```
 
 ## Development
-Make sure src/electron.ts is set to load index.html is loaded directly:
+Make sure src/electron.ts is set to load index.html (win.loadFile('index.html');)
 
 ```bash
-win.loadFile('index.html');
+npm start
 ```
 
 ## Production
-Set index.html in src/electron.ts to load from dist/index.html
+Set index.html in src/electron.ts to load from dist/index.html (win.loadFile('dist/index.html');)
 
 ```bash
-win.loadFile('dist/index.html');
+npm run build
+npm run dist
 ```
 
 
