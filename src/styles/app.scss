@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import 'react-big-calendar/lib/sass/styles';
+@import 'react-big-calendar/lib/addons/dragAndDrop/styles'; // if using DnD
+@import "./variables.scss";
+@import "./calendar/overrides.scss";
+@import './components.scss';
+@import "./datepicker/datepicker.scss";
+
+* {
+    box-sizing: border-box;
+}
+html, body, #app {
+    height: 100%;
+    width: 100%;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    //background: #FFF;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    background: $bgColor;
+    color: rgb(210,210,210);
+}
+
+h2 {
+    margin-top: 0.7rem;
+}
+
+.posrel {
+    position: relative;
+    > div {
+        position: relative;
+    }
+}
+#app {
+    display: flex;
+    flex-direction: row;
+}
+.content {
+    width: calc(100% - 280px);
+    padding: 1rem;
+}
+aside {
+    width: $sidebarWidth;
+    background: $primaryColor;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    a {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        line-height: 3rem;
+        padding: 0 1rem;
+        border-bottom: 1px solid lighten($primaryColor, 10);
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        svg {
+            margin-right: 1rem;
+            path {
+                fill: #FFF;
+            }
+        }
+        &.active {
+            background: $buttonColor;
+            color: $primaryColor;
+            svg path {
+                fill: $primaryColor;
+            }
+        }
+    }
+}
+
+a {
+    color: $buttonColor;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-weight: bold;
+    height: 5rem;
+    color: #FFF;
+    letter-spacing: 2px;
+    span {
+        font-weight: normal;
+        margin-left: 0.4rem;
+        border-left: 1px solid rgba(255,255,255,0.4);
+        padding-left: 0.4rem;
+    }
+    svg {
+        margin-right: 1rem;
+        width: 2rem;
+    }
+}

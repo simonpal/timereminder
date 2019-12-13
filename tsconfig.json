@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+          ],
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "rootDir": "src",
+        "jsx": "react",
+        "target": "es5",
+        "downlevelIteration": true
+    },
+    "include": [
+        "src"
+    ]
+}

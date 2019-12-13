@@ -1,0 +1,60 @@
+.rbc-calendar {
+    height: 90%;
+}
+.rbc-event, .rbc-agenda-table td {
+    color: $primaryColor;
+}
+
+.rbc-off-range-bg {
+    background: lighten($bgColor, 5);
+}
+
+.rbc-toolbar button {
+    border-color: $buttonColor;
+    color: #FFF;
+    transition: all 0.2s ease;
+    &:hover {
+        color: #FFF;
+        background-color: lighten($buttonColor, 5);
+        border-color: $primaryColor;
+    }
+    &:active, &.rbc-active, &.rbc-active:hover, &.rbc-active:focus {
+        border-color: $buttonColor;
+        background-color: $buttonColor;
+        color: $primaryColor;
+    }
+}
+
+.rbc-time-view,
+.rbc-calendar *,
+.rbc-time-view div,
+.rbc-agenda-view table.rbc-agenda-table thead > tr > th,
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td,
+.rbc-agenda-view table.rbc-agenda-table {
+    border-top-color: $tableBorderColor!important;
+    border-left-color: $tableBorderColor!important;
+    border-right-color: $tableBorderColor!important;
+    border-bottom-color: $tableBorderColor!important;
+}
+.rbc-header + .rbc-header, .rbc-day-bg + .rbc-day-bg, .rbc-time-content > * + * > * {
+    border-left-color: $tableBorderColor!important;
+}
+.rbc-timeslot-group {
+    border-bottom-color: $tableBorderColor!important;
+}
+.rbc-day-slot .rbc-time-slot {
+    border-top-color: $tableBorderColor!important;
+}
+.rbc-calendar .rbc-today .rbc-day-slot .rbc-time-slot {
+    border-top-color: lighten($tableBorderColor, 10)!important;
+}
+.rbc-today {
+    background: $tableBorderColor;
+}
+
+.rbc-day-slot .rbc-event {
+    background: $buttonColor;
+    border: 1px solid lighten($buttonColor, 5);
+    color: $primaryColor;
+    font-size: 0.9rem;
+}

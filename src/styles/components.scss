@@ -1,0 +1,303 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+}
+.modal {
+    border-radius: 0.2rem;
+    //background: #FFF;
+    background: $bgColor;
+    padding: 1rem 1rem 0 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    z-index: 5;
+    box-shadow: 0px 10px 39px -12px rgba(0,0,0,0.75);
+    max-height: 80%;
+    overflow: auto;
+    .buttons {
+        position: sticky;
+        bottom: 0;
+        background: $bgColor;
+        padding-bottom: 1rem;
+    }
+}
+
+.auto-complete {
+    >div {
+        position: relative;
+        width: 100%;
+        >div {
+            background: rgb(54,50,57)!important;
+            position: absolute!important;
+            left: 0!important;
+            top: 100%!important;
+            max-height: 200px!important;
+            z-index: 10 !important;
+            div {
+                padding: 0.5rem;
+            }
+            div:hover {
+                background: lighten(rgb(54,50,57), 5)!important;
+            }
+        }
+    }
+}
+
+input:not([type=checkbox]):not([type=radio]) {
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 1px solid darken($primaryColor, 20);
+    border-radius: 0.3rem;
+    width: 100%;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: #FFF;
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.add-event-form {
+    .row {
+        justify-content: space-between;
+        >div {
+            width: 48%;
+        }   
+        button {
+            width: 50%;
+        }
+    }
+}
+
+.row {
+    display: flex;
+}
+.mb1 {
+    margin-bottom: 1rem;
+}
+.justify-content-right {
+    justify-content: flex-end;
+}
+.space-between {
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+}
+.half-col {
+    width: 48%;
+}
+
+.buttons {
+    padding-top: 1rem;
+    border-top: 1px solid lighten($bgColor, 5);
+}
+
+button {
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    background-color: $buttonColor;
+    color: $primaryColor;
+    border: 1px solid $buttonColor;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: 0;
+    &:disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+    &.secondary {
+        background-color: transparent;
+        color: $buttonColor;
+    }
+    &.tertiary {
+        border: 0;
+        color: $buttonColor;
+        background: transparent;
+        svg path {
+            fill: $buttonColor;
+        }
+    }
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    li {
+        line-height: 3rem;
+        border-bottom: 1px solid lighten($bgColor, 5);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+        button {
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            position: absolute;
+            right: 0;
+            top: 8px;
+            background: transparent;
+            border: 0;
+            padding:0;
+            svg path {
+                fill: $buttonColor;
+            }
+        }
+        &:hover {
+            padding-right: 3rem;
+            button {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+.line-tag {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $buttonColor;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.duration-tag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .number {
+        display: inline-flex;
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid $buttonColor;
+        border-radius: 2rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin: 0.5rem 0;
+    }
+    label {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        opacity: 0.8;
+    }
+    .ending {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+}
+
+.event-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    h2 {
+        max-width: 80%;
+    }
+}
+
+.single-title {
+    align-items: center;
+    justify-content: flex-start;
+    button {
+        height: 2rem;
+        line-height: 2rem;
+        padding: 0;
+        margin-right: 1rem;
+    }
+}
+
+.event-list {
+    @extend .items-list;
+    li span {
+        width: 25%;
+        &:last-of-type {
+            width: 2rem;
+        }        
+    }
+    li:hover {
+        padding-right: 0;
+    }
+}
+
+.event-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $tableBorderColor;
+    margin-bottom: 1rem;
+    td, th {
+        border: 1px solid $tableBorderColor;
+        padding: 0.8rem;
+    }
+    tr td:last-of-type {
+        text-align: center;
+    }
+}
+
+.event-info {
+    display: flex;
+    margin-bottom: 1rem;
+    >div:first-of-type {
+        width: 80%;
+    }
+    .duration-tag {
+        width: 20%;
+    }
+}
+
+.color-list {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    padding: 0;
+    list-style-type: none;
+    li {
+        margin: 0 0.5rem;
+
+        button {
+            border: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 1px solid #EEE;
+            display: inline-block;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 0;
+            outline: 0;
+            &.active {
+                border: 3px solid #0984e3;
+                transform: scale(1.1);
+            }
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
